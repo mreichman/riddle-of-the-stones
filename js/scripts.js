@@ -16,5 +16,6 @@ stones.push(new Stone(12, 2));
 var scale = new Scale(0);
 
 $(document).ready(function() {
+  $(".stone").draggable();
   $("#stone1").data(stones[0]);
 });

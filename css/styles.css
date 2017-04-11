@@ -1,0 +1,13 @@
+.stone {
+  padding: 15px;
+  border: solid black 3px;
+  border-radius: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#scale {
+  height: 350px;
+  margin: 20px;
+  border: solid black 5px;
+}
