@@ -11,14 +11,16 @@ function Scale(timesUsed, leftWeight, rightWeight) {
 }
 
 var stones = [];
-for (var i=1; i<=11; i++) {
-  stones.push(new Stone(i, 1, "none"));
+for (var i=1; i<=6; i++) {
+  stones.push(new Stone(i, 1, "left"));
+}
+for (var i=1; i<=5; i++) {
+  stones.push(new Stone(i, 1, "right"));
 }
 stones.push(new Stone(12, 2, "none"));
 console.log(stones);
-console.log(Stone.number(1));
 
-var scale = new Scale(0);
+var scale = new Scale(0, 0, 0);
 
 function weigh() {
   stones.forEach(function(stone) {
@@ -28,12 +30,16 @@ function weigh() {
     if (stone.side === "right") {
       scale.rightWeight += 1;
     }
-    return scale.leftWeight - scale.rightWeight;
-    console.log(scale);
   });
+  scale.timesUsed += 1;
+  console.log(scale.timesUsed);
+  var balance = (scale.leftWeight - scale.rightWeight);
+  return balance;
 }
 
 $(document).ready(function() {
   $(".stone").draggable();
+  weighResult = weigh();
+  console.log(weighResult);
   $("#stone1").data(stones[0]);
 });
