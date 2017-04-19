@@ -4,10 +4,21 @@
   border-radius: 100%;
   display: inline-block;
   cursor: pointer;
+  background-color: #d3d3d3;
 }
 
-#scale {
-  height: 350px;
-  margin: 20px;
-  border: solid black 5px;
+.row {
+  position: relative;
+  height: 300px;
+  z-index: -1;
+}
+
+#left-side {
+  background-color: orange;
+  height: inherit;
+}
+
+#right-side {
+  background-color: blue;
+  height: inherit;
 }
