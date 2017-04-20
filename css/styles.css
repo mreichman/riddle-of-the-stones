@@ -5,12 +5,11 @@
   display: inline-block;
   cursor: pointer;
   background-color: #d3d3d3;
+  z-index: 1;
 }
 
 .row {
-  position: relative;
   height: 300px;
-  z-index: -1;
 }
 
 #left-side {
