@@ -21,3 +21,11 @@
   background-color: blue;
   height: inherit;
 }
+
+#weigh {
+  display: block;
+  margin: 20px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20pt;
+}

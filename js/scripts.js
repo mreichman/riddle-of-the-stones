@@ -14,7 +14,8 @@ for (var i=1; i<=11; i++) {
   stones.push(new Stone(1, "none"));
 }
 stones.push(new Stone(2, "none"));
-console.log(stones);
+
+var oddStoneOut = stones[11]
 
 var scale = new Scale(0, 0, 0);
 
@@ -58,6 +59,16 @@ $(document).ready(function() {
     }
     console.log(stones);
   });
-  var scalePosition = $("#right-side").position();
-  var positionStone1 = $("#stone11").position();
+  $("#weigh").click(function() {
+    var result = weigh();
+    if (scale.timesUsed > 3) {
+      alert("The scale has been used 3 times already. Time to submit your answer!")
+    } else if (result > 0) {
+      alert("The left side is heavier");
+    } else if (result < 0) {
+      alert("The right side is heavier");
+    } else {
+      alert("The weights are equal");
+    }
+  });
 });
