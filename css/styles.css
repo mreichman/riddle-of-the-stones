@@ -10,6 +10,7 @@
 
 .row {
   height: 300px;
+  margin-top: 15px
 }
 
 #left-side {
@@ -20,6 +21,11 @@
 #right-side {
   background-color: blue;
   height: inherit;
+}
+
+#left-heavier, #left-lighter, #right-heavier, #right-lighter, #equal, #scale-used {
+  display: none;
+  font-size: 20pt;
 }
 
 #weigh {

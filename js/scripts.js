@@ -57,18 +57,27 @@ $(document).ready(function() {
       currentStone = $(this).attr('id');
       stones[currentStone].side = "none";
     }
+    $("#left-heavier").hide();
+    $("#right-lighter").hide();
+    $("#right-heavier").hide();
+    $("#left-lighter").hide();
+    $("#equal").hide();
+    $("#weigh").show();
     console.log(stones);
   });
   $("#weigh").click(function() {
     var result = weigh();
+    $(this).hide();
     if (scale.timesUsed > 3) {
-      alert("The scale has been used 3 times already. Time to submit your answer!")
+      $("#scale-used").show();
     } else if (result > 0) {
-      alert("The left side is heavier");
+      $("#left-heavier").show();
+      $("#right-lighter").show();
     } else if (result < 0) {
-      alert("The right side is heavier");
+      $("#right-heavier").show();
+      $("#left-lighter").show();
     } else {
-      alert("The weights are equal");
+      $("#equal").show();
     }
   });
 });
