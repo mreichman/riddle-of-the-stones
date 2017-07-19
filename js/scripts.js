@@ -9,13 +9,19 @@ function Scale(timesUsed, leftWeight, rightWeight) {
   this.rightWeight = rightWeight;
 }
 
+var randomStone = Math.floor(Math.random() * 10);
+
 var stones = [];
-for (var i=1; i<=11; i++) {
+for (var i=1; i<=12; i++) {
   stones.push(new Stone(1, "none"));
 }
-stones.push(new Stone(2, "none"));
 
-var oddStoneOut = stones[11]
+var heavierOrLighter = Math.random();
+if (heavierOrLighter > 0.5) {
+  stones[randomStone].weight = 2;
+} else {
+  stones[randomStone].weight = 0;
+}
 
 var scale = new Scale(0, 0, 0);
 
@@ -36,6 +42,7 @@ function weigh() {
 }
 
 $(document).ready(function() {
+  var oddStoneOut = randomStone + 1;
   var currentStone = "";
   var rightEdge = $("#right-side").position();
   var divider = rightEdge.left;
@@ -68,8 +75,19 @@ $(document).ready(function() {
   $("#weigh").click(function() {
     var result = weigh();
     $(this).hide();
-    if (scale.timesUsed > 3) {
+    if (scale.timesUsed >= 3) {
+      if (result > 0) {
+        $("#left-heavier").show();
+        $("#right-lighter").show();
+      } else if (result < 0) {
+        $("#right-heavier").show();
+        $("#left-lighter").show();
+      } else {
+        $("#equal").show();
+      }
+      $("#weigh").remove();
       $("#scale-used").show();
+      $("#answer-submit").show();
     } else if (result > 0) {
       $("#left-heavier").show();
       $("#right-lighter").show();
@@ -79,5 +97,16 @@ $(document).ready(function() {
     } else {
       $("#equal").show();
     }
+  });
+  $("#answer-submit").submit(function(event) {
+    var answerInput = $("#answerInput").val();
+    if (parseInt(answerInput) === oddStoneOut) {
+      $("#correct").show();
+    } else {
+      $("#oddStoneOut").text(oddStoneOut);
+      $("#incorrect").show();
+    }
+    $("#answer-submit :input").prop("disabled", true);
+    event.preventDefault();
   });
 });

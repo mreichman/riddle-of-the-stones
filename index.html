@@ -11,6 +11,8 @@
   </head>
   <body>
     <div class="container-fluid">
+      <h1>Welcome to Riddle of the Stones</h1>
+      <p>There are 12 stones. One of them is either heavier or lighter than the others. You can use the 2 sided scale 3 times to find the answer.</p>
       <span id="0" class="stone">Stone 1</span>
       <span id="1" class="stone">Stone 2</span>
       <span id="2" class="stone">Stone 3</span>
@@ -33,9 +35,18 @@
       <span id="left-lighter">The left side is lighter</span>
       <span id="right-heavier">The right side is heavier</span>
       <span id="right-lighter">The right side is lighter</span>
-      <span id="equal">The weights are equal</span>
+      <div id="equal">The weights are equal</div>
       <button type="button" id="weigh" class="btn btn-default">Weigh</button>
-      <span id="scale-used">The scale has been used 3 times</span>
+      <div id="scale-used">The scale has been used 3 times</div>
+      <form id="answer-submit">
+        <div class="form-group">
+          <label for="answerInput">What is your answer?</label><br>
+          <input type="number" class="from-control" id="answerInput">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <div id="correct">You are correct!</div>
+      <div id="incorrect">Sorry, the odd stone out was stone number <span id="oddStoneOut"></span>.</div>
     </div>
   </body>
 </html>

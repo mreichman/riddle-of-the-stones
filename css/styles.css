@@ -23,7 +23,7 @@
   height: inherit;
 }
 
-#left-heavier, #left-lighter, #right-heavier, #right-lighter, #equal, #scale-used {
+#left-heavier, #left-lighter, #right-heavier, #right-lighter, #equal, #scale-used, #correct, #incorrect, #answer-submit {
   display: none;
   font-size: 20pt;
 }
@@ -34,4 +34,51 @@
   padding-left: 20px;
   padding-right: 20px;
   font-size: 20pt;
+}
+
+#equal {
+  text-align: center;
+}
+
+#right-lighter {
+  float: right;
+  margin-right: 15%;
+}
+
+#right-heavier {
+  float: right;
+  margin-right: 15%;
+}
+
+#left-lighter {
+  margin-left: 15%;
+}
+
+#left-heavier {
+  margin-left: 15%;
+}
+
+#scale-used {
+  text-align: center;
+}
+
+#answer-submit {
+  text-align: center;
+}
+
+#correct {
+  text-align: center;
+}
+
+#incorrect {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 14pt;
 }
