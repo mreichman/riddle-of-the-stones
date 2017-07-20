@@ -44,18 +44,18 @@ function weigh() {
 $(document).ready(function() {
   var oddStoneOut = randomStone + 1;
   var currentStone = "";
-  var rightEdge = $("#right-side").position();
-  var divider = rightEdge.left;
   $(".stone").draggable();
   $(".stone").mouseup(function() {
     currentStone = "";
-    stonePosition = $(this).position();
+    var rightEdge = $("#right-side").position();
+    var divider = rightEdge.left;
+    var stonePosition = $(this).position();
     console.log(stonePosition);
-    if (stonePosition.left < divider && stonePosition.top > 56 && stonePosition.top < 356) {
+    if (stonePosition.left < divider && stonePosition.top > 175 && stonePosition.top < 418) {
       console.log("left");
       currentStone = $(this).attr('id');
       stones[currentStone].side = "left";
-    } else if (stonePosition.left > divider && stonePosition.top > 56 && stonePosition.top < 356) {
+    } else if (stonePosition.left > divider && stonePosition.top > 175 && stonePosition.top < 418) {
       console.log("right");
       currentStone = $(this).attr('id');
       stones[currentStone].side = "right";
