@@ -14,7 +14,7 @@ This app can be viewed at https://mreichman.github.io/riddle-of-the-stones
 
 ## Contact details
 
-_Please contact Max Reichman through email at reichmanmax@gmail.com_
+Please contact Max Reichman through email at reichmanmax@gmail.com
 
 ## Technologies Used
 

@@ -22,8 +22,6 @@ if (heavierOrLighter > 0.5) {
 } else {
   stones[randomStone].weight = 0;
 }
-console.log(stones[randomStone]);
-console.log(randomStone);
 
 var scale = new Scale(0, 0, 0);
 
@@ -54,17 +52,13 @@ $(document).ready(function() {
     var scaleTop = rightEdge.top;
     var scaleBottom = rightEdge.top + 250;
     var stonePosition = $(this).position();
-    console.log(stonePosition);
     if (stonePosition.left < divider && stonePosition.top > scaleTop && stonePosition.top < scaleBottom) {
-      console.log("left");
       currentStone = $(this).attr('id');
       stones[currentStone].side = "left";
     } else if (stonePosition.left > divider && stonePosition.top > scaleTop && stonePosition.top < scaleBottom) {
-      console.log("right");
       currentStone = $(this).attr('id');
       stones[currentStone].side = "right";
     } else {
-      console.log("none");
       currentStone = $(this).attr('id');
       stones[currentStone].side = "none";
     }
