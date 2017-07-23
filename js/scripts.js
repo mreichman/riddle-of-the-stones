@@ -9,12 +9,12 @@ function Scale(timesUsed, leftWeight, rightWeight) {
   this.rightWeight = rightWeight;
 }
 
-var randomStone = Math.floor(Math.random() * 10);
-
 var stones = [];
 for (var i=1; i<=12; i++) {
   stones.push(new Stone(1, "none"));
 }
+
+var randomStone = Math.floor(Math.random() * 10);
 
 var heavierOrLighter = Math.random();
 if (heavierOrLighter > 0.5) {
@@ -22,6 +22,8 @@ if (heavierOrLighter > 0.5) {
 } else {
   stones[randomStone].weight = 0;
 }
+console.log(stones[randomStone]);
+console.log(randomStone);
 
 var scale = new Scale(0, 0, 0);
 
@@ -48,14 +50,16 @@ $(document).ready(function() {
   $(".stone").mouseup(function() {
     currentStone = "";
     var rightEdge = $("#right-side").position();
-    var divider = rightEdge.left;
+    var divider = rightEdge.left - 37;
+    var scaleTop = rightEdge.top;
+    var scaleBottom = rightEdge.top + 250;
     var stonePosition = $(this).position();
     console.log(stonePosition);
-    if (stonePosition.left < divider && stonePosition.top > 175 && stonePosition.top < 418) {
+    if (stonePosition.left < divider && stonePosition.top > scaleTop && stonePosition.top < scaleBottom) {
       console.log("left");
       currentStone = $(this).attr('id');
       stones[currentStone].side = "left";
-    } else if (stonePosition.left > divider && stonePosition.top > 175 && stonePosition.top < 418) {
+    } else if (stonePosition.left > divider && stonePosition.top > scaleTop && stonePosition.top < scaleBottom) {
       console.log("right");
       currentStone = $(this).attr('id');
       stones[currentStone].side = "right";
@@ -70,7 +74,6 @@ $(document).ready(function() {
     $("#left-lighter").hide();
     $("#equal").hide();
     $("#weigh").show();
-    console.log(stones);
   });
   $("#weigh").click(function() {
     var result = weigh();

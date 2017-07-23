@@ -18,10 +18,11 @@ _Please contact Max Reichman through email at reichmanmax@gmail.com_
 
 ## Technologies Used
 
-* _JavaScript_
-* _jQuery_
-* _HTML_
-* _CSS_
+* JavaScript
+* jQuery
+* CSS
+* HTML
+* Bootstrap
 
 ### License
 
