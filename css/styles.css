@@ -82,3 +82,16 @@ p {
   text-align: center;
   font-size: 14pt;
 }
+
+#answer-choices {
+  display: inline;
+}
+
+#answerInput {
+  font-size: 12pt;
+}
+
+#submit-answer-button {
+  display: inline;
+  font-size: 12pt;
+}

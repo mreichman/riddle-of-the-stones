@@ -14,7 +14,7 @@ for (var i=1; i<=12; i++) {
   stones.push(new Stone(1, "none"));
 }
 
-var randomStone = Math.floor(Math.random() * 10);
+var randomStone = Math.floor(Math.random() * 12);
 
 var heavierOrLighter = Math.random();
 if (heavierOrLighter > 0.5) {
